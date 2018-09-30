@@ -1,9 +1,6 @@
 _res = get_ipython().run_cell("""
 !pip install tqdm
 !pip install tensorflow
-!rm tboard.py
-!wget https://raw.githubusercontent.com/mixuala/colab_utils/master/tboard.py
-!rm -rf log/
 """)
 
 
@@ -11,13 +8,6 @@ import os
 import tboard
 import copy
 from tqdm import tqdm
-# set paths
-ROOT = os.path.abspath('.')
-LOG_DIR = os.path.join(ROOT, 'log')
-
-# will install `ngrok`, if necessary
-# will create `log_dir` if path does not exist
-tboard.launch_tensorboard( bin_dir=ROOT, log_dir=LOG_DIR )
 
 from collections import namedtuple
 import tensorflow.keras as keras
