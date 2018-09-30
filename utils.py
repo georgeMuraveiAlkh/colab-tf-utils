@@ -1,6 +1,6 @@
 _res = get_ipython().run_cell("""
 !pip install tqdm
-!pip install keras
+!pip install tensorflow
 !rm tboard.py
 !wget https://raw.githubusercontent.com/mixuala/colab_utils/master/tboard.py
 !rm -rf log/
@@ -20,7 +20,7 @@ LOG_DIR = os.path.join(ROOT, 'log')
 tboard.launch_tensorboard( bin_dir=ROOT, log_dir=LOG_DIR )
 
 from collections import namedtuple
-import keras
+import tensorflow.keras as keras
 from google.colab import auth
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload, MediaIoBaseDownload
